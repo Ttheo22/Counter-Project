@@ -1,0 +1,32 @@
+hextobcd:
+clr c
+mov a,30h
+mov b,#100
+div ab
+orl a,r4
+mov 29h,a
+mov r0, #029h
+movx @r0,a
+clr c
+mov a,b
+mov b,#10
+div ab
+orl ,r5
+mov 2Ah,a
+inc r0
+movx @r0,a
+mov a,b
+orl a, r6
+mov 2Bh,a
+inc r0
+movx @ r0,a
+clr rs0
+clr rs1
+mov a,2aH
+r1 a
+r1 a
+r1 a
+r1 a
+orl a, 2bh
+mov 2fh,a
+ret
